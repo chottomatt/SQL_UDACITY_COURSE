@@ -21,24 +21,42 @@ where all combined conditions must be true.
 OR This allows you to combine operations where at 
 least one of the combined conditions must be true.
 
-PRACTICE
+PRACTICE 1
 Use the accounts table to find
-1
+1.1
 All the companies whose names start with 'C'.*/
 SELECT name
 FROM accounts
 WHERE name LIKE 'C%'
 
 /*
-2
+1.2
 All companies whose names contain the 
 string 'one' somewhere in the name.*/
 SELECT name
 FROM accounts
 WHERE name LIKE '%one%'
 /*
-3
+1.3
 All companies whose names end with 's'.*/
 SELECT name
 FROM accounts
 WHERE name LIKE '%s'
+
+/* PRACTICE 2
+2.1
+Use the accounts table to find the account name, 
+primary_poc, and sales_rep_id for Walmart, Target, 
+and Nordstrom.*/
+SELECT name, primary_poc, sales_rep_id
+FROM accounts
+WHERE name IN('Walmart','Target','Nordstrom');
+/*
+2.2
+Use the web_events table to find all information 
+regarding individuals who were contacted via the 
+channel of organic or adwords.*/
+SELECT *
+FROM web_events
+WHERE channel IN ('organic', 'adwords');
+
